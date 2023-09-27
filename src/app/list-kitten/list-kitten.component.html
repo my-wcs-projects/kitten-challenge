@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <app-create-kitten
+      (sendKitten)="onRrceiveNewKitten($event)"
+    ></app-create-kitten>
+
+    <h3 class="center">List of Available Kittens</h3>
+    <div class="container">
+      <div
+        class="card col s12 m6 l4"
+        *ngFor="let kitten of kittens; let i = index"
+      >
+        <div
+          class="card-image"
+          (mouseenter)="showInfo = i"
+          (mouseleave)="showInfo = null"
+        >
+          <img [src]="kitten.imageLink" alt="" />
+          <p class="card-content" *ngIf="showInfo === i">
+            Name : {{ kitten.name }} <br />
+            Breed: {{ kitten.breed }}<br />
+            Birth Date: {{ kitten.birthDate }}<br />
+          </p>
+          <button class="btn btn-primary" (click)="adoptKitten(i)">
+            Adopt
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-user-kitten [userKittens]="userKittens"></app-user-kitten>

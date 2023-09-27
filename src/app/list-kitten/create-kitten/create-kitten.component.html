@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <form class="col s12" #kittenForm="ngForm" (ngSubmit)="addKitten()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input
+            id="name"
+            type="text"
+            class="validate"
+            name="name"
+            [(ngModel)]="newKitten.name"
+            #kittenNme="ngModel"
+            required
+          />
+          <label for="name">Nom</label>
+          <!-- <div
+              [hidden]="kittenNme.valid || kittenNme.pristine"
+              class="red accent-1"
+            >
+              <div *ngIf="kittenNme.hasError('required')">
+                Le nom est requis
+              </div>
+            </div> -->
+        </div>
+        <div class="input-field col s6">
+          <input
+            id="breed"
+            type="text"
+            class="validate"
+            name="breed"
+            [(ngModel)]="newKitten.breed"
+            #breed="ngModel"
+            required
+          />
+          <label for="breed">Race</label>
+          <!-- <div
+              [hidden]="breed.valid || breed.pristine"
+              class="red accent-1"
+            >
+              <div *ngIf="breed.hasError('required')">La race est requis</div>
+            </div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="bithDate"
+            type="date"
+            class="validate"
+            name="birthDate"
+            [(ngModel)]="newKitten.birthDate"
+            #birthDate="ngModel"
+            required
+          />
+          <label for="bithDate">Date de naissance</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="imageLink"
+            type="text"
+            class="validate"
+            name="imageLink"
+            [(ngModel)]="newKitten.imageLink"
+            #imageLink="ngModel"
+            required
+          />
+          <label for="imageLink">Lien de l'image</label>
+        </div>
+      </div>
+      <button
+        class="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+        [disabled]="!kittenForm.valid"
+      >
+        Ajouter
+      </button>
+    </form>
+  </div>
+</div>

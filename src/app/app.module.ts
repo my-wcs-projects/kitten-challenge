@@ -3,16 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CreateKittenComponent } from './list-kitten/create-kitten/create-kitten.component';
+import { ListKittenComponent } from './list-kitten/list-kitten.component';
+import { UserKittenComponent } from './list-kitten/user-kitten/user-kitten.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateKittenComponent,
+    ListKittenComponent,
+    UserKittenComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

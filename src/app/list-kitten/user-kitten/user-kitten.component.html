@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <h4 class="center">My Kittens</h4>
+  <ul>
+    <li *ngFor="let kitten of userKittens" class="item">
+      <div class="card-image">
+        <img [src]="kitten.imageLink" alt="My Kitten" />
+      </div>
+    </li>
+  </ul>
+</div>
